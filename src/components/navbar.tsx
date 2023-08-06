@@ -7,20 +7,13 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import { SearchBar } from './searchBar';
+import Image from 'next/image';
 
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}>
-            <MenuIcon />
-          </IconButton>
+        <Toolbar className="bg-black border-b-2 border-blue-400">
           <Typography
             variant="h6"
             noWrap
@@ -29,7 +22,12 @@ export default function Navbar() {
               flexGrow: 1,
               display: { xs: 'none', sm: 'block' },
             }}>
-            MUI
+            <Image
+              src={'/image/gmovie-logo.png'}
+              alt="logo"
+              width={80}
+              height={30}
+            />
           </Typography>
           <SearchBar />
         </Toolbar>
